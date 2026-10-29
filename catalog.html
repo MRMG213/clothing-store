@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Каталог — Threadline</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Threadline</a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="catalog.html" class="nav-link active">Каталог</a>
+        <a href="register.html" class="nav-link">Регистрация</a>
+        <a href="login.html" class="nav-link">Вход</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="catalog-head">
+      <h1>Каталог товаров</h1>
+      <p>Выберите категорию или найдите нужную вещь по названию.</p>
+
+      <div class="catalog-controls">
+        <label for="catalog-search" class="visually-hidden">Поиск по каталогу</label>
+        <input
+          type="search"
+          id="catalog-search"
+          class="search-input"
+          placeholder="Поиск: футболка, куртка, джинсы…"
+          autocomplete="off"
+        />
+        <div class="filter-buttons" role="group" aria-label="Фильтр по категориям">
+          <button class="filter-btn active" data-category="all">Все</button>
+          <button class="filter-btn" data-category="top">Верх</button>
+          <button class="filter-btn" data-category="outer">Верхняя одежда</button>
+          <button class="filter-btn" data-category="bottom">Низ</button>
+          <button class="filter-btn" data-category="accessory">Аксессуары</button>
+        </div>
+      </div>
+      <p id="catalog-status" class="catalog-status" aria-live="polite"></p>
+    </section>
+
+    <section class="catalog-grid" id="catalog-grid">
+      <!-- Карточки товаров -->
+      <article class="product-card" data-category="top" data-name="Футболка Oversize Cotton">
+        <div class="product-thumb">👕</div>
+        <h2 class="product-title">Футболка Oversize Cotton</h2>
+        <p class="product-desc">Плотный хлопок 240 г/м², свободный крой, 5 цветов.</p>
+        <div class="product-meta">
+          <span class="product-price">1 990 ₽</span>
+          <span class="product-cat">Верх</span>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="outer" data-name="Куртка Bomber Classic">
+        <div class="product-thumb">🧥</div>
+        <h2 class="product-title">Куртка Bomber Classic</h2>
+        <p class="product-desc">Ветрозащитная ткань, утеплитель, посадка regular.</p>
+        <div class="product-meta">
+          <span class="product-price">7 490 ₽</span>
+          <span class="product-cat">Верхняя одежда</span>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="bottom" data-name="Джинсы Slim Indigo">
+        <div class="product-thumb">👖</div>
+        <h2 class="product-title">Джинсы Slim Indigo</h2>
+        <p class="product-desc">Стрейч-деним, посадка slim, классический индиго.</p>
+        <div class="product-meta">
+          <span class="product-price">4 290 ₽</span>
+          <span class="product-cat">Низ</span>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="top" data-name="Худи Fleece Basic">
+        <div class="product-thumb">🧶</div>
+        <h2 class="product-title">Худи Fleece Basic</h2>
+        <p class="product-desc">Мягкий футер с начёсом, капюшон и карман-кенгуру.</p>
+        <div class="product-meta">
+          <span class="product-price">3 590 ₽</span>
+          <span class="product-cat">Верх</span>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="accessory" data-name="Шарф Wool Blend">
+        <div class="product-thumb">🧣</div>
+        <h2 class="product-title">Шарф Wool Blend</h2>
+        <p class="product-desc">Тёплая шерстяная смесь, размер 180×30 см.</p>
+        <div class="product-meta">
+          <span class="product-price">1 290 ₽</span>
+          <span class="product-cat">Аксессуары</span>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="outer" data-name="Пальто Wool Long">
+        <div class="product-thumb">🧥</div>
+        <h2 class="product-title">Пальто Wool Long</h2>
+        <p class="product-desc">Длинное пальто из шерстяной смеси, подкладка.</p>
+        <div class="product-meta">
+          <span class="product-price">11 900 ₽</span>
+          <span class="product-cat">Верхняя одежда</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Threadline. Учебный проект по ПМ.09.</p>
+    </div>
+  </footer>
+
+  <script src="js/catalog.js"></script>
+</body>
+</html>
