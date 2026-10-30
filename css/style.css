@@ -24,6 +24,19 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.55;
+
+  /* Sticky footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
 }
 
 a {
