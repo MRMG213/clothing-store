@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактировать — <%= product.name %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Threadline</a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/catalog" class="nav-link">Каталог</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container auth-page">
+    <section class="auth-card">
+      <h1>Редактировать товар</h1>
+
+      <form action="/product/<%= product.id %>/edit" method="POST" class="auth-form" novalidate>
+        <div class="form-field">
+          <label for="name">Название</label>
+          <input type="text" id="name" name="name" value="<%= product.name %>">
+          <% if (errors.name) { %><span class="error-message"><%= errors.name %></span><% } %>
+        </div>
+
+        <div class="form-field">
+          <label for="description">Описание</label>
+          <textarea id="description" name="description" rows="3"><%= product.description || '' %></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="price">Цена (₽)</label>
+          <input type="number" step="0.01" id="price" name="price" value="<%= product.price %>">
+          <% if (errors.price) { %><span class="error-message"><%= errors.price %></span><% } %>
+        </div>
+
+        <div class="form-field">
+          <label for="category_id">Категория</label>
+          <select id="category_id" name="category_id">
+            <% categories.forEach(function(c) { %>
+              <option value="<%= c.id %>" <%= product.category_id == c.id ? 'selected' : '' %>>
+                <%= c.name %>
+              </option>
+            <% }); %>
+          </select>
+          <% if (errors.category_id) { %><span class="error-message"><%= errors.category_id %></span><% } %>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Сохранить</button>
+        <a href="/product/<%= product.id %>" class="auth-switch">Отмена</a>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

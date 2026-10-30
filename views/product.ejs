@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= product.name %> — Threadline</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Threadline</a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/catalog" class="nav-link">Каталог</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container auth-page">
+    <section class="auth-card" style="width:min(600px,100%)">
+      <h1><%= product.name %></h1>
+      <p class="auth-subtitle">Категория: <%= product.category_name %></p>
+      <p><%= product.description %></p>
+      <p class="product-price" style="font-size:1.4rem"><%= product.price %> ₽</p>
+
+      <div class="hero-actions" style="margin-top:20px">
+        <a href="/product/<%= product.id %>/edit" class="btn btn-primary">Редактировать</a>
+
+        <form action="/product/<%= product.id %>/delete" method="POST" style="display:inline"
+              onsubmit="return confirm('Удалить товар?')">
+          <button type="submit" class="btn btn-ghost">Удалить</button>
+        </form>
+
+        <a href="/catalog" class="btn btn-ghost">Назад</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

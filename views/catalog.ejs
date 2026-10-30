@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — Threadline</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Threadline</a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/catalog" class="nav-link active">Каталог</a>
+        <a href="/register.html" class="nav-link">Регистрация</a>
+        <a href="/login.html" class="nav-link">Вход</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="catalog-head">
+      <h1>Каталог товаров</h1>
+      <a href="/product/add" class="btn btn-primary">+ Добавить товар</a>
+    </div>
+
+    <% if (products.length === 0) { %>
+      <p class="catalog-status">В каталоге пока нет товаров. Добавьте первый!</p>
+    <% } %>
+
+    <div class="catalog-grid">
+      <% products.forEach(function(p) { %>
+        <article class="product-card">
+          <div class="product-thumb">👕</div>
+          <h2 class="product-title">
+            <a href="/product/<%= p.id %>"><%= p.name %></a>
+          </h2>
+          <p class="product-desc"><%= p.description %></p>
+          <div class="product-meta">
+            <span class="product-price"><%= p.price %> ₽</span>
+            <span class="product-cat"><%= p.category_name %></span>
+          </div>
+        </article>
+      <% }); %>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2026 Threadline. ПМ.09 ЛР №2.</p></div>
+  </footer>
+</body>
+</html>
