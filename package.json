@@ -1,0 +1,26 @@
+{
+  "name": "clothing-store",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №1 Вариант 5.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRMG213/clothing-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MRMG213/clothing-store/issues"
+  },
+  "homepage": "https://github.com/MRMG213/clothing-store#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0"
+  }
+}
